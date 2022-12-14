@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        async function clickAction() {
+            try {
+                // extension changed to .xml from .json to cause an error
+                const response = await fetch('https://hacker-news.firebaseio.com/v0/item/1.xml');
+                if (!response.ok) throw new Error(response.status);
+                const resJSON = await response.json();
+
+                const button = document.getElementById('centeredButton');
+                button.innerHTML = `Id: ${resJSON.id}`;
+            } catch (err) {
+                console.error(`Failed to fetch data; ${err}`);
+            }
+
+        }
+    </script>
+    <title>Selenium Test Web page</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Test Automation Notes #01</h1>
+    <button id="centeredButton" onclick="clickAction()"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Click Me</button>
+</body>
+
+</html>
