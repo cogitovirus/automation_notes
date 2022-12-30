@@ -20,13 +20,7 @@ const caps = {
  * @returns void
  */
 async function logNetworkErrors(driver) {
-  const driverLogsInterface = driver.manage().logs();
-  const performanceLogs = await driverLogsInterface.get('performance');
-
-  if (performanceLogs.length === 0) {
-    console.log('No performance logs found');
-    return Promise.resolve();
-  }
+  const performanceLogs = await driver.manage().logs().get('performance') || [];
 
   performanceLogs.forEach((log) => {
     const parsedLog = JSON.parse(log.message);
@@ -57,20 +51,13 @@ async function logNetworkErrors(driver) {
  * @returns void
  */
 async function logBrowserConsoleErrors(driver) {
-  const driverLogsInterface = driver.manage().logs();
-  const browserLogs = await driverLogsInterface.get('browser');
-
-  if (browserLogs.length === 0) {
-    console.log('No browser logs found');
-    return Promise.resolve();
-  }
+  const browserLogs = await driver.manage().logs().get('browser') || [];
 
   browserLogs.forEach((log) => {
     if (log.message) {
       console.log(`SEVERE message: ${log.message} \n`);
     }
   });
-
 }
 
 describe('A scraper test', function () {
