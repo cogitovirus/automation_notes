@@ -36,11 +36,11 @@ async function logNetworkErrors(driver) {
       // log all related logs
       relatedLogs.forEach((relatedLog) => {
         const parsedRelatedLog = JSON.parse(relatedLog.message);
-        console.log(`requestID: ${failedRequestId}, ${JSON.stringify(parsedRelatedLog)}`)
+        console.log(`NETWORK request ID: ${failedRequestId}, ${JSON.stringify(parsedRelatedLog, null, 2)}`)
 
       });
       //  finally, log the response
-      console.log(`requestID: ${failedRequestId}, ${JSON.stringify(parsedLog)}\n`);
+      console.log(`NETWORK request ID: ${failedRequestId}, ${JSON.stringify(parsedLog, null, 2)}\n`);
     }
   });
 }
