@@ -1,0 +1,11 @@
+{
+  "name": "02_slack_bot_for_qa",
+  "version": "1.0.0",
+  "description": "Expert level test automation kung fu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "w.zolnierowicz@gmail.com",
+  "license": "ISC"
+}
