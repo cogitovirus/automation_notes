@@ -1,6 +1,6 @@
 # #01 Automation Notes  - scraping browser logs
 ## Installation
-Project is based on node.js so make sure you have it installed.
+The project is based on node.js so make sure you have it installed.
 
 Remember to run the command listed below from the scraper folder, not the git repo root folder.
 
@@ -15,7 +15,7 @@ node server.js
 ```
 ## Running tests
 
-You need to have chrome driver installed & available in your PATH. For more info see [here](https://chromedriver.chromium.org/getting-started)
+You need to have Chrome driver installed & available in your PATH. For more info see [here](https://chromedriver.chromium.org/getting-started)
 
 To run tests:
 ```sh
